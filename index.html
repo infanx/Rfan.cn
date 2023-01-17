@@ -1,12 +1,48 @@
 <!DOCTYPE html>
-<html lang="zh_CN">
+<html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>infanx 主页</title>
+	<meta charset="UTF-8" />
+	<meta http-equiv="Access-Control-Allow-Origin" content="*">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="一个主页" />
+	<meta name="keywords" content="infanx,个人主页" />
+	<meta name="author" content="infanx" />
+	<meta name="theme-color" content="#424242" />
+	<title><%- title %></title>
+	<link rel="stylesheet" href="https://s1.hdslb.com/bfs/static/jinkela/long/font/regular.css" />
+	<link rel="icon" href="/images/icon/favicon.ico">
+	<link rel="apple-touch-icon" href="/images/icon/apple-touch-icon.png">
+	<link rel="stylesheet" href="/loading/loading.min.css">
+	<!-- IE 爬走 -->
+	<script>
+		if (false || (!!window.MSInputMethodContext && !!document.documentMode))
+			window.location.href = "https://support.dmeng.net/upgrade-your-browser.html?referrer=" + encodeURIComponent(window.location.href)
+	</script>
 </head>
-<body>
-    
+
+<body class="loading">
+	<!-- 加载动画 -->
+	<div id="loading-box">
+		<div class="loading-left-bg"></div>
+		<div class="loading-right-bg"></div>
+		<div class="spinner-box">
+			<div class="loader">
+				<div class="inner one"></div>
+				<div class="inner two"></div>
+				<div class="inner three"></div>
+			</div>
+			<div class="loading-word">
+				<p class="loading-title" id="loading-title"><%- title %></p>
+				<span id="loading-text">加载中</span>
+			</div>
+		</div>
+	</div>
+	<!-- 主体内容 -->
+	<div id="app"></div>
+	<!-- noscript -->
+	<noscript>
+		<div style="text-align: center">请开启 JavaScript</div>
+	</noscript>
+	<script type="module" src="/src/main.js"></script>
 </body>
 </html>
